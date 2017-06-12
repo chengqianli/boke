@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="stylesheets/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="stylesheets/style.css" type="text/css"/>
+	<style type="text/css">
+		#liuyan{
+			margin:150px auto 0;
+			color:red;
+			width:800px;
+			
+		}
+		#liuyan input{
+			background: goldenrod;
+		}
+		#liuyan textarea{
+			background: gold;
+		}
+	</style>
+</head>
+<body>
+	<%- include('header.ejs') %>
+	
+</br>
+		<form id="liuyan" action="/users/liuyan" method="post">
+			<div>标题：<input type="text" class="form-control" name="bt"/></div>
+			<div>内容：<textarea rows="10" name="txt" class="form-control"></textarea></div>
+			<input type="submit" value="发布留言" class="btn btn-default"/>
+			
+		</br>
+		<h2>留言显示</h2>
+			<table class="table">
+				<tr>
+					<td>序号</td>
+					<td>标题</td>
+					<td>内容</td>
+				</tr>
+				<% result.forEach(function(item,i){ %>
+					<tr>
+						<td><%- i %></td>
+						<td><%- item.title %></td>
+						<td><%- item.con %></td>
+					</tr>
+					<% })%>
+				<tr>
+					
+				</tr>
+			</table>
+		</form>
+</body>
+</html>

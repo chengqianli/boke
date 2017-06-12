@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<link rel="stylesheet" href="stylesheets/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="stylesheets/style.css" type="text/css"/>
+	<link rel="stylesheet" href="stylesheets/shouye.css" type="text/css">
+	<style type="text/css">
+		#rizhi{
+			display: none;
+		}
+	</style>
+</head>
+<body>
+			
+			<%- include('header.ejs') %>
+		<div id="con">
+			<div id="con1">
+				<span>嘿嘿</span><input id="xie" type="button" value="写日志"/>
+				<img src="../images/u=1895116084,4238718864&fm=26&gp=0.jpg">
+				<div >
+					<p>这是我</p>
+					<p>来玩吧</p>
+					<p>一起做朋友</p>
+					<p>欢迎您</p>
+					<p>欢迎点评</p>
+					<p>这是我</p>
+				</div>
+			</div>
+			<div id="con2">
+				<form action="/users/rizhi" method="post">
+					<div id="rizhi">
+					<div>标题：<input type="text" class="form-control" name="bt1"/></div>
+					<div>内容：<textarea rows="10" name="txt1" class="form-control"></textarea></div>
+					<input id="input"type="submit" value="发表日志" class="btn btn-default"/>
+				</div>
+				<% result.forEach(function(item,i){ %>
+					<li>
+					<p><%- item.title %></p>
+					<p><%- item.con %></p>
+					<p><input type="button" value="全文" /></p>
+					</li>
+				<% }) %>
+				
+				</form>
+				<script type="text/javascript">
+					var oinput=document.getElementById('input');
+					var rizhi=document.getElementById('rizhi');
+					var xie=document.getElementById('xie');
+					oinput.onclick=function(){
+						rizhi.style.display='none';
+					}
+					xie.onclick=function(){
+						rizhi.style.display='block';
+					}
+				</script>
+			</div>
+		</div>
+		
+		
+		
+		
+		
+</body>
+</html>

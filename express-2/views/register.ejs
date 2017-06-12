@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="stylesheets/bootstrap.min.css" type="text/css"/>
+	<link rel="stylesheet" href="stylesheets/style.css" type="text/css"/>
+	<style type="text/css">
+		#zhuche{
+			color: gold;
+			font-size: 20px;
+			margin:150px auto 0;
+			width:250px;
+		}
+		#zhuche #input{
+				background: red;
+			margin-top: 20px;
+			width:70px;
+			height: 40px;
+			border: 0;
+		}
+	</style>
+</head>
+<body>
+	<%- include('header.ejs') %>
+	
+</br>
+		<form id="zhuche" action="/users/form" method="post">
+			<div>账号：<input type="text" class="form-control" name="zh"/></div>
+			<div>密码：<input type="text" class="form-control" name="pass"/></div>
+			<input id="input" type="submit" value="注册"/>
+		</form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='stylesheets/style.css' type="text/css"/>
+   <link rel="stylesheet" href="stylesheets/bootstrap.min.css" type="text/css"/>
+  </head>
+  <body>
+   <%- include('header.ejs') %>
+    
+   </br>
+   			<% if(!use){%>
+   				  
+   <button class="btn btn-success" onclick="location.href='/denglu'">登录</button>
+   <button class="btn btn-info" onclick="location.href='/register'">注册</button>
+   			<% }else{ %>
+   <span>欢迎：<%- use %> </span>
+    <button class="btn btn-default" onclick="location.href='/liuyan'">留言</button>
+   <button class="btn btn-primary" onclick="location.href='/tuichu'">退出</button>
+   			<% } %>
+  </body>
+</html>
+
